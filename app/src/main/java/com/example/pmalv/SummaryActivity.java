@@ -1,6 +1,5 @@
 package com.example.pmalv;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,36 +10,79 @@ import android.widget.TextView;
 
 public class SummaryActivity extends AppCompatActivity {
 
-    private String sImePrezime;
-    private String sPredmet;
-    private TextView oImePrezime;
-    private TextView oPredmet;
-    private Button oBtnHome;
+    private String sImeStudenta;
+    private TextView oImeStudenta;
+
+    private String sPrezimeStudenta;
+    private TextView oPrezimeStudenta;
+
+    private String sDatumRodenjaStudenta;
+    private TextView oDatumRodenjaStudenta;
+
+    private String sNazivPredmeta;
+    private TextView oNazivPredmeta;
+
+    private String sProfesor;
+    private TextView oProfesor;
+
+    private String sAkGod;
+    private TextView oAkGod;
+
+    private String sSatiPredavanja;
+    private TextView oSatiPredavanja;
+
+    private String sSatiLV;
+    private TextView oSatiLV;
+
+    private Button oBtnPovratak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
-
         final Bundle oExtras = getIntent().getExtras();
-        sImePrezime = oExtras.getString("imePrezime");
-        sPredmet =oExtras.getString("predmet");
 
-        oImePrezime = (TextView)findViewById(R.id.tvImePrezime);
-        oImePrezime.setText(sImePrezime);
-        oPredmet = (TextView)findViewById(R.id.tvPredmet);
-        oPredmet.setText(sPredmet);
+        sImeStudenta = oExtras.getString("imeStudenta");
+        oImeStudenta = (TextView)findViewById(R.id.imeStudenta);
+        oImeStudenta.setText(sImeStudenta);
 
-        oBtnHome= (Button)findViewById(R.id.btnHome);
+        sPrezimeStudenta = oExtras.getString("prezimeStudenta");
+        oPrezimeStudenta = (TextView)findViewById(R.id.prezimeStudenta);
+        oPrezimeStudenta.setText(sPrezimeStudenta);
 
-        oBtnHome.setOnClickListener(new View.OnClickListener() {
+        sDatumRodenjaStudenta = oExtras.getString("datumRodenjaStudenta");
+        oDatumRodenjaStudenta = (TextView)findViewById(R.id.datumRodenjaStudenta);
+        oDatumRodenjaStudenta.setText(sDatumRodenjaStudenta);
+
+        sNazivPredmeta = oExtras.getString("nazivPredmeta");
+        oNazivPredmeta = (TextView)findViewById(R.id.nazivPredmeta);
+        oNazivPredmeta.setText(sNazivPredmeta);
+
+        sProfesor = oExtras.getString("profesor");
+        oProfesor = (TextView)findViewById(R.id.profesor);
+        oProfesor.setText(sProfesor);
+
+        sAkGod = oExtras.getString("akGod");
+        oAkGod = (TextView)findViewById(R.id.akGod);
+        oAkGod.setText(sAkGod);
+
+        sSatiPredavanja = oExtras.getString("satiPredavanja");
+        oSatiPredavanja = (TextView)findViewById(R.id.satiPredavanja);
+        oSatiPredavanja.setText(sSatiPredavanja);
+
+        sSatiLV = oExtras.getString("satiLV");
+        oSatiLV = (TextView)findViewById(R.id.satiLV);
+        oSatiLV.setText(sSatiLV);
+
+        oBtnPovratak = (Button)findViewById(R.id.btnPovratak);
+        oBtnPovratak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent oUpisiPredmetIntent = new Intent(getApplicationContext(), PersonalInfoActivity.class);
-                oUpisiPredmetIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(oUpisiPredmetIntent);
+                Intent oPovratakNaPrvuStranicu = new Intent(getApplicationContext(), PersonalInfoActivity.class);
+                oPovratakNaPrvuStranicu.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(oPovratakNaPrvuStranicu);
+
             }
         });
-
     }
 }

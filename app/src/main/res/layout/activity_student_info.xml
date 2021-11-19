@@ -7,37 +7,98 @@
     tools:context=".StudentInfoActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPredmet"
+        android:id="@+id/inputPredmet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="143dp"
-        android:text="Ime i prezime"
-        app:layout_constraintBottom_toTopOf="@+id/btnSpremiStudenta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietPredmet"
+            android:id="@+id/inptPredmet"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="unesite predmet"
-            ></com.google.android.material.textfield.TextInputEditText>
-
+            android:layout_height="wrap_content"
+            android:hint="Upiši naziv predmeta" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputProfesor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPredmet">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inptProfesor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Profesor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputAkGod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputProfesor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inptAkGod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tenutna godina" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputSatiPredavanja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAkGod">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inptSatiPredavanja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Broj sati predavanja" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputSatiLv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSatiPredavanja">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inptSatiLV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Broj sati LV-a" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <Button
-        android:id="@+id/btnSpremiStudenta"
+        android:id="@+id/btnUpisPredmeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="169dp"
-        android:text="Spremi"
+        android:text="Upiši"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPredmet" />
-
-
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
